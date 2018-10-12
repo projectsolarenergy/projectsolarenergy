@@ -159,7 +159,7 @@ action="https://script.google.com/macros/s/AKfycby-uGvCqq1oPsPrgGiHruSqKmXLU3D0c
 </div>
 <div class="col-sm-6">
 <h3>Find us on Google Map</h3>
-<div id="mapBox" style="border-radius:10px;box-shadow:0px 2px 3px rgba(0,0,0,0.4)"></div><!--error-->
+<div id="mapBox" style="border-radius:10px;box-shadow:rgba(0, 0, 0, 0.4) 0px 2px 3px;position:relative;overflow:hidden;"><iframe src="https://www.google.com/maps/d/embed?mid=1cWnGKsPyD4CYNAwWk4yi5oqh1jqofTtc&amp;hl=en" width="558" height="420" style="margin-left:-2px;"></iframe></div><!--error-->
 </div>
 </div>            
 </div>
@@ -224,32 +224,6 @@ Sun cares you, Solar saves you.
 <script data-cfasync="false" type="text/javascript"
 src="js/mail-handler.js"></script>
 <!--jQuery, Bootstrap and other vendor JS-->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-var target = document.head;
-var observer = new MutationObserver(function(mutations) {
-for (var i = 0; mutations[i]; ++i) {                    // notify when script to hack is added in HTML head
-if (mutations[i].addedNodes[0].nodeName == "SCRIPT" && mutations[i].addedNodes[0].src.match(/\/AuthenticationService.Authenticate?/g)) {
-var str = mutations[i].addedNodes[0].src.match(/[?&]callback=.*[&$]/g);
-if (str) {
-if (str[0][str[0].length - 1] == '&') {
-str = str[0].substring(10, str[0].length - 1);
-} else {
-str = str[0].substring(10);
-}
-var split = str.split(".");
-var object = split[0];
-var method = split[1];
-window[object][method] = null; 
-}
-observer.disconnect();
-}
-}
-});
-var config = { attributes: true, childList: true, characterData: true }
-observer.observe(target, config);
-</script>
-<script src="js/google-map.js"></script>
 <script src="js/script-min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126263011-1"></script>
