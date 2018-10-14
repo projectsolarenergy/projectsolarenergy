@@ -502,13 +502,25 @@ Sun cares you, Solar saves you.
 </div>
 </footer><!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
-<!-- Your customer chat code -->
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><!-- Your customer chat code -->
 <div class="fb-customerchat"
 attribution=setup_tool
 page_id="1465822786973665"
 theme_color="#67b868">
 </div><script src="js/script-min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics --></body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126263011-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());gtag('config', 'UA-126263011-1');
+</script></body>
 </html>
 <script>
 $(document).ready(function() {
